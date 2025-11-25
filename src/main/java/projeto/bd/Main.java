@@ -1,16 +1,12 @@
 package projeto.bd;
 
-import projeto.bd.tela.TelaCidadao;
+import projeto.bd.tela.TelaInicial;
 import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
-        //abridno a tela
         SwingUtilities.invokeLater(() -> {
-
-            TelaCidadao tela = new TelaCidadao();
-            tela.setVisible(true);
-
+            new TelaInicial().setVisible(true);
         });
     }
 }
