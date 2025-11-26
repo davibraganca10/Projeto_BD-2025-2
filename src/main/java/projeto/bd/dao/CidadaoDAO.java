@@ -17,7 +17,6 @@ public class CidadaoDAO {
             stmt.setString(2, cidadao.getEmail());
             stmt.setString(3, cidadao.getTelefone());
             stmt.setString(4, cidadao.getCpf());
-
             stmt.execute();
             System.out.println("Cidadão criado");
 

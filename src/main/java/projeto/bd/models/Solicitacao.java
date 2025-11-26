@@ -28,7 +28,7 @@ public class Solicitacao {
     public void setIdRegiao(Integer idRegiao) {
         this.idRegiao = idRegiao;
     }
-    public Integer getIdCidadao() {
+    public Integer getIdCidadao(){
         return idCidadao;
     }
     public void setIdCidadao(Integer idCidadao) {
@@ -46,19 +46,19 @@ public class Solicitacao {
     public void setIdStatus(Integer idStatus) {
         this.idStatus = idStatus;
     }
-    public String getLogradouro() {
+    public String getLogradouro(){
         return logradouro;
     }
-    public void setLogradouro(String logradouro) {
+    public void setLogradouro(String logradouro){
         this.logradouro = logradouro;
     }
-    public Timestamp getDataAbertura() {
+    public Timestamp getDataAbertura(){
         return dataAbertura;
     }
-    public void setDataAbertura(Timestamp dataAbertura) {
+    public void setDataAbertura(Timestamp dataAbertura){
         this.dataAbertura = dataAbertura;
     }
-    public String getNumeroSolicitacao() {
+    public String getNumeroSolicitacao(){
         return numeroSolicitacao;
     }
     public void setNumeroSolicitacao(String numeroSolicitacao) {
@@ -76,4 +76,7 @@ public class Solicitacao {
     public void setReferencia(String referencia){
         this.referencia = referencia;
     }
+
+    @Override
+    public String toString() { return numeroSolicitacao + " - " + logradouro; }
 }

@@ -48,4 +48,26 @@ public class SolicitacaoDAO {
             throw new RuntimeException(e);}
         return lista;
     }
+    public void atualizar(Solicitacao s) {
+        String sql = "UPDATE Solicitacao SET id_regiao=?, id_tipo_servico=?, id_status=?, logradouro=?, referencia=? WHERE id_solicitacao=?";
+        try (Connection conn = ConexaoFactory.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, s.getIdRegiao());
+            stmt.setInt(2, s.getIdTipoServico());
+            stmt.setInt(3, s.getIdStatus());
+            stmt.setString(4, s.getLogradouro());
+            stmt.setString(5, s.getReferencia());
+            stmt.setInt(6, s.getId());
+            stmt.execute();
+        } catch (SQLException e) { throw new RuntimeException(e); }
+    }
+    public void deletar(int id) {
+        String sql = "DELETE FROM Solicitacao WHERE id_solicitacao=?";
+        try (Connection conn = ConexaoFactory.getConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e); }
+    }
 }

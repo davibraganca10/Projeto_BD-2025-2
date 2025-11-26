@@ -27,6 +27,6 @@ public class Regiao {
 
     @Override
     public String toString() {
-        return "Nome: " + nome;
+        return nome;
     }
 }
