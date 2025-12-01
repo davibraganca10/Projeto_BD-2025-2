@@ -1,4 +1,4 @@
-package projeto.bd; // Note que não tem o ".dao" aqui
+package projeto.bd;
 
 import projeto.bd.dao.ConexaoFactory;
 import java.sql.Connection;
