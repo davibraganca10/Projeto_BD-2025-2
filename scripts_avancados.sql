@@ -28,7 +28,7 @@ AS '
 CALL Finalizar_Servico(1, 'Serviço concluído com sucesso.');
 SELECT * FROM Ordem_Servico WHERE id_ordem_servico = 1;
 
--- TRIGGER PARA ATUALIZAR STATUS
+-- TRIGGER
 
 CREATE OR REPLACE FUNCTION func_atualizar_status_em_andamento()
 RETURNS TRIGGER AS $$
