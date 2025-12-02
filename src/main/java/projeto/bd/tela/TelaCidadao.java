@@ -25,7 +25,7 @@ public class TelaCidadao extends JFrame {
         this.dao = new CidadaoDAO();
 
         setSize(800, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
 

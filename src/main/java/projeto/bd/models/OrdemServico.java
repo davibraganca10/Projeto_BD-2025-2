@@ -46,4 +46,10 @@ public class OrdemServico {
     public void setRelatorio(String relatorio) {
         this.relatorio = relatorio;
     }
+
+    @Override
+    public String toString() {
+        // concertar como o nome parece para a tela de matUtlz
+        return "OS " + id + " (Solicitação: " + idSolicitacao + ")";
+    }
 }

@@ -27,3 +27,23 @@ AS '
 
 CALL Finalizar_Servico(1, 'Serviço concluído com sucesso.');
 SELECT * FROM Ordem_Servico WHERE id_ordem_servico = 1;
+
+-- TRIGGER PARA ATUALIZAR STATUS
+
+CREATE OR REPLACE FUNCTION func_atualizar_status_em_andamento()
+RETURNS TRIGGER AS $$
+BEGIN
+UPDATE Solicitacao
+SET id_status = 3 -- status 3 = em andamento
+WHERE id_solicitacao = NEW.id_solicitacao;
+RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+-- sempre que INSERT uma OS, dispara a func_atualizar
+CREATE TRIGGER tg_iniciar_atendimento
+    AFTER
+    INSERT
+ON Ordem_Servico
+    FOR EACH ROW
+EXECUTE FUNCTION
+    func_atualizar_status_em_andamento();
